@@ -1,32 +1,48 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Carousel from 'react-material-ui-carousel'
-import {Button, Paper} from "@material-ui/core";
+import {Button, Card, CardActions, CardContent, CardMedia} from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
+import clsx from "clsx";
 
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles(() => ({
+    root: {
+        maxWidth: 800,
+        maxHeight: 800,
+    },
+    media: {
+        height: 400,
+    },
+    sliderBg: {
+        backgroundColor: '#98cfbc'
+    }
+}));
 
-export default function InfoSlider(props: any) {
+export default function InfoSlider() {
     const classes = useStyles();
 
     const items = [
         {
-            name: "Random Name #1",
-            description: "Probably the most random thing you have ever seen!",
+            name: "IT terms in easy words",
+            description: "We use cards to learn IT terms easy. You can learn more and also teach english.",
             img: 'https://teacheslonline.files.wordpress.com/2013/03/teachenglish.jpg'
         },
         {
-            name: "Random Name #2",
-            description: "Hello World!"
+            name: "IT news",
+            description: "Last IT news from all world.",
+            img: 'https://previews.123rf.com/images/maxkabakov/maxkabakov1312/maxkabakov131201847/24601637-news-concept-pixelated-words-it-news-on-digital-background-3d-render.jpg'
         }
     ]
 
     return (
-        <div className={'p-1 bg-green-500'}>
+        <div className={clsx('p-1', classes.sliderBg)}>
             <Carousel className={'mt-6'}
                       next={() => {/* Do stuff */
                       }}
                       prev={() => {/* Do other stuff */
-                      }}>
+                      }}
+                      autoPlay={false}
+            >
                 {
                     items.map((item, i) => <Item key={i} item={item}/>)
                 }
@@ -36,14 +52,30 @@ export default function InfoSlider(props: any) {
 }
 
 function Item(props: any) {
+    const classes = useStyles();
+
     return (
-        <Paper className={''}>
-            <h2>{props.item.name}</h2>
-            <p>{props.item.description}</p>
-            <img className={'mx-auto'} width={200} src={props.item.img}/>
-            <Button className="CheckButton">
-                Check it out!
-            </Button>
-        </Paper>
+        <div className={'text-center flex justify-center'}>
+            <Card className={classes.root}>
+                    <CardMedia
+                        className={classes.media}
+                        image={props.item.img}
+                        title="Slider image"
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h3" component="h2">
+                            {props.item.name}
+                        </Typography>
+                        <Typography variant="h5" color="textSecondary" component="p">
+                            {props.item.description}
+                        </Typography>
+                    </CardContent>
+                <CardActions>
+                    <Button size="small" color="primary">
+                        Learn More
+                    </Button>
+                </CardActions>
+            </Card>
+        </div>
     )
 }

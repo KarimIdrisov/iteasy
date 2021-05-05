@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function MainPage(props: any) {
+export default function AboutUsPage(props: any) {
     const classes = useStyles();
     return (
         <div>
