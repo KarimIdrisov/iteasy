@@ -13,7 +13,10 @@ const useStyles = makeStyles((theme) => ({
     rightContent: {
         float: "right",
         marginTop: "10vh",
-        marginRight: "13vw",
+        marginRight: "8vw",
+    },
+    leftContent: {
+
     },
     topText: {
         fontSize: "5rem",
@@ -87,6 +90,9 @@ export default function MainPage(props: any) {
                         <Typography className={classes.botText}>Do you want to know what that overcomplicated <br/>
                         scientifically oriented terms are meaning?<br/>
                         We will have an answer for you!</Typography>
+                    </div>
+                    <div className={classes.leftContent}>
+                        Paralax side
                     </div>
                     <div className={classes.rect}></div>
                     <div className={classes.irect}></div>
