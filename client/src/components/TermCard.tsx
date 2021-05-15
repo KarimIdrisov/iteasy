@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     card: {
-        margin: '5rem',
         width: '20vw',
         height: '14vw',
         background: '#C4C4C4',
