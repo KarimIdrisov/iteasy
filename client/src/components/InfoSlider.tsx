@@ -8,10 +8,11 @@ import clsx from "clsx";
 const useStyles = makeStyles(() => ({
     root: {
         maxWidth: 800,
-        maxHeight: 800,
+        maxHeight: '82vh',
+        minHeight: '82vh',
     },
     media: {
-        height: 400,
+        height: 350,
     },
     sliderBg: {
         backgroundColor: '#98cfbc'
@@ -37,12 +38,9 @@ export default function InfoSlider() {
     return (
         <div className={clsx('p-1', classes.sliderBg)}>
             <Carousel className={'mt-6'}
-                      next={() => {/* Do stuff */
-                      }}
-                      prev={() => {/* Do other stuff */
-                      }}
-                      autoPlay={false}
-            >
+                      next={() => {/* Do stuff */}}
+                      prev={() => {/* Do other stuff */}}
+                      autoPlay={false}>
                 {
                     items.map((item, i) => <Item key={i} item={item}/>)
                 }
@@ -60,8 +58,7 @@ function Item(props: any) {
                     <CardMedia
                         className={classes.media}
                         image={props.item.img}
-                        title="Slider image"
-                    />
+                        title="Slider image"/>
                     <CardContent>
                         <Typography gutterBottom variant="h3" component="h2">
                             {props.item.name}

@@ -5,11 +5,11 @@ import {BrowserRouter as Router} from "react-router-dom";
 function App() {
     const routes = useRoutes()
     return (
-        <div>
-            <Router>
+        <Router>
+            <div>
                 {routes}
-            </Router>
-        </div>
+            </div>
+        </Router>
     );
 }
 

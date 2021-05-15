@@ -10,7 +10,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles(() => ({
     main: {
-        width: '100vw',
         height: '9.4vh',
         background: '#85dcb8',
         display: 'flex',
@@ -58,10 +57,11 @@ const useStyles = makeStyles(() => ({
 }));
 
 const links = [
-    {title: 'Home', url: ''},
-    {title: 'News', url: ''},
-    {title: 'Trends', url: ''},
-    {title: 'About us', url: ''},
+    {title: 'Home', url: '/'},
+    {title: 'News', url: '/news'},
+    {title: 'Trends', url: '/trends'},
+    {title: 'Terms', url: '/terms'},
+    {title: 'About us', url: '/about'},
 ]
 
 export default function Header() {
@@ -96,7 +96,9 @@ export default function Header() {
     return (
         <div className={classes.main}>
             <div className={classes.logo}>
-                <Svg/>
+                <Link to='/'>
+                    <Svg/>
+                </Link>
             </div>
             <div className={classes.innerCont}>
                 <IconButton
@@ -114,7 +116,7 @@ export default function Header() {
                            }/>
                 <div className={clsx(['mr-4 ml-4 container flex text-3xl'], {[classes.hide]: width < 1000})}>
                     {links.map(link => (
-                        <Link to={link.url} className={'mx-auto text-2xl font-bold'}>
+                        <Link key={link.title} to={link.url} className={'mx-auto text-2xl font-bold'}>
                             <h5>{link.title}</h5>
                         </Link>
                     ))}
