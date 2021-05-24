@@ -9,7 +9,7 @@ import MainTermCard from "../components/MainTermCard";
 const useStyles = makeStyles((theme) => ({
     root: {
         backgroundColor: '#41B3A3',
-        height: '90vh',
+        height: '90.6vh',
     },
     left: {},
     main: {},

@@ -7,7 +7,16 @@ import TermCard from "../components/TermCard";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        backgroundColor: '#C38D9E'
+        backgroundColor: '#C38D9E',
+        height: '90.6vh',
+        display: 'flex'
+    },
+    centralContent: {
+        backgroundColor: '#41B3A3',
+        flex: 2,
+    },
+    side: {
+        flex: 1,
     }
 }));
 
@@ -17,9 +26,9 @@ export default function NewsPage(props: any) {
         <div>
             <Layout>
                 <div className={clsx('container max-w-full max-h-screen', classes.root)}>
-                    <TermCard header={'Test'} description={"Test"} img={''}>
-
-                    </TermCard>
+                    <div className={classes.side}></div>
+                    <div className={classes.centralContent}></div>
+                    <div className={classes.side}></div>
                 </div>
             </Layout>
         </div>
