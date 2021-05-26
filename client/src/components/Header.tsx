@@ -60,7 +60,7 @@ const links = [
     {title: 'Home', url: '/'},
     {title: 'News', url: '/news'},
     {title: 'Trends', url: '/trends'},
-    {title: 'Terms', url: '/terms'},
+    {title: 'Terms', url: '/terms/ai'},
     {title: 'About us', url: '/about'},
 ]
 

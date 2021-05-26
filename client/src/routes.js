@@ -12,8 +12,7 @@ export const useRoutes = () => {
             <Route path="/about">
                 <AboutUsPage/>
             </Route>
-            <Route path="/terms/">
-                <TermsPage/>
+            <Route path="/terms/:id" component={TermsPage}>
             </Route>
             <Route path="/news">
                 <NewsPage/>

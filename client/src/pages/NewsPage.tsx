@@ -1,9 +1,7 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Layout from "../components/Layout";
-import InfoSlider from "../components/InfoSlider";
 import clsx from "clsx";
-import TermCard from "../components/TermCard";
 
 const useStyles = makeStyles((theme) => ({
     root: {
