@@ -7,12 +7,13 @@ import clsx from "clsx";
 
 const useStyles = makeStyles(() => ({
     root: {
-        maxWidth: 800,
+        maxWidth: '72vw',
         maxHeight: '82vh',
         minHeight: '82vh',
+        minWidth: '72vw',
     },
     media: {
-        height: 350,
+        height: '40vh',
     },
     sliderBg: {
         backgroundColor: '#98cfbc'
@@ -24,14 +25,14 @@ export default function InfoSlider() {
 
     const items = [
         {
-            name: "IT terms in easy words",
-            description: "We use cards to learn IT terms easy. You can learn more and also teach english.",
-            img: 'https://teacheslonline.files.wordpress.com/2013/03/teachenglish.jpg'
+            name: "Kiril Iriskin",
+            description: "300 bucks",
+            img: 'https://sun9-36.userapi.com/impg/6iVf09SYCvjU_nD7ovEUmWSzmZVMVKi--92StA/4tyQKL-wQVY.jpg?size=1000x967&quality=95&sign=fe88d8906fe219edb2716ed55136f954&type=album'
         },
         {
-            name: "IT news",
-            description: "Last IT news from all world.",
-            img: 'https://previews.123rf.com/images/maxkabakov/maxkabakov1312/maxkabakov131201847/24601637-news-concept-pixelated-words-it-news-on-digital-background-3d-render.jpg'
+            name: "Kim Asa",
+            description: "Next door.",
+            img: 'https://sun9-68.userapi.com/impg/brDFPzPADedGEigJsfFjTl9OZX7BOmZTh_bEZA/LWotm2Ji4lQ.jpg?size=1280x995&quality=96&sign=d99e66998d8bb4f6f5f7b0b446286a53&type=album'
         }
     ]
 
@@ -40,7 +41,7 @@ export default function InfoSlider() {
             <Carousel className={'mt-6'}
                       next={() => {/* Do stuff */}}
                       prev={() => {/* Do other stuff */}}
-                      autoPlay={false}>
+                      autoPlay={true}>
                 {
                     items.map((item, i) => <Item key={i} item={item}/>)
                 }
@@ -67,11 +68,6 @@ function Item(props: any) {
                             {props.item.description}
                         </Typography>
                     </CardContent>
-                <CardActions>
-                    <Button size="small" color="primary">
-                        Learn More
-                    </Button>
-                </CardActions>
             </Card>
         </div>
     )

@@ -33,7 +33,7 @@ export default function MainTermCard(props: any) {
 
     return (
         <div className={classes.card}>
-            {/*<img src={props.img} alt={props.altImg} className={classes.cardImg}/>*/}
+            <img src={props.img} alt={props.altImg} className={classes.cardImg}/>
             <div className={classes.innerCard}>
                 <Typography variant='h5'>{props.header}</Typography>
                 <Typography style={{fontSize: '1rem', marginTop: 15}}>{props.desc}</Typography>
