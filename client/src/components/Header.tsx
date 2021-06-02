@@ -11,10 +11,10 @@ import MenuIcon from '@material-ui/icons/Menu';
 const useStyles = makeStyles(() => ({
     main: {
         height: '9.4vh',
-        background: '#85dcb8',
+        background: '#e4eceb',
         display: 'flex',
         flexDirection: 'row',
-        alignItems: "flex-start",
+        alignItems: "center",
         fontFamily: 'Lato',
     },
     innerCont: {
@@ -30,6 +30,7 @@ const useStyles = makeStyles(() => ({
         marginLeft: '1rem',
         width: '20%',
         height: '85%',
+
     },
     linkBox: {
         marginRight: '3vw',

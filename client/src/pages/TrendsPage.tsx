@@ -3,45 +3,56 @@ import {makeStyles} from '@material-ui/core/styles';
 import Layout from "../components/Layout";
 import Typography from "@material-ui/core/Typography"
 import clsx from "clsx";
+import {Button, Card, CardActions, CardContent} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        backgroundColor: '#C38D9E',
-        height: '90.6vh',
+        backgroundImage: 'url(https://cdn.hipwallpaper.com/i/49/59/CJBg9I.jpg)',
+        height: '100vh',
         display: 'flex',
         justifyContent: 'center',
+        backgroundSize: "cover",
+        flexWrap: 'wrap'
     },
-    Container: {
-        marginTop: '7%',
-        display: 'flex',
-        height: '65vh',
-        width: '80vw',
-    },
-    centralContent: {
-        backgroundColor: '#41B3A3',
-        flex: 2,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    sideR: {
-        backgroundColor: '#85DCB0',
-        flex: 1,
-        borderRadius: '0 25% 25% 0',
-    },
-    sideL: {
-        backgroundColor: '#85DCB0',
-        flex: 1,
-        borderRadius: '25% 0 0 25%',
-    },
-    cardImg: {
-        height: '65vh',
-        width: '40vw',
-        position: 'absolute',
-        opacity: 0.1
-    },
+    card: {
+        width: '25%',
+        margin: '3rem'
+    }
+
 }));
+
+const trends = [
+    {
+        id: 'ai',
+        title: 'Artificial Intelligence',
+        description: 'Artificial Intelligence, or AI, has already received a lot of buzz in the past decade, but it continues to be one of the new technology trends because its notable effects on how we live, work and play are only in the early stages. AI is already known for its superiority in image and speech recognition, navigation apps, smartphone personal assistants, ride-sharing apps and so much more.',
+
+    },
+    {
+        id: 'rpa',
+        title: 'Robotic Process Automation (RPA)',
+        description: 'Like AI and Machine Learning, Robotic Process Automation, or RPA, is another technology that is automating jobs. RPA is the use of software to automate business processes such as interpreting applications, processing transactions, dealing with data, and even replying to emails. RPA automates repetitive tasks that people used to do. ',
+
+    },
+    {
+        id: 'ec',
+        title: 'Edge Computing',
+        description: 'Formerly a new technology trend to watch, cloud computing has become mainstream, with major players AWS (Amazon Web Services), Microsoft Azure and Google Cloud Platform dominating the market. The adoption of cloud computing is still growing, as more and more businesses migrate to a cloud solution. But it’s no longer the emerging technology trend. Edge is.',
+
+    }
+    ,{
+        id: 'qc',
+        title: 'Quantum Computing',
+        description: 'Next remarkable technology trend is quantum computing, which is a form of computing that takes advantage of quantum phenomena like superposition and quantum entanglement. This amazing technology trend is also involved in preventing the spread of the coronavirus, and to develop potential vaccines, thanks to its ability to easily query, monitor, analyze and act on data, regardless of the source. Another field where quantum computing is finding applications in banking and finance, to manage credit risk, for high-frequency trading and fraud detection.',
+
+    },
+    {
+        id: 'vr',
+        title: 'Virtual Reality and Augmented Reality',
+        description: 'The next exceptional technology trend - Virtual Reality (VR) and Augmented Reality (AR), and Extended Reality (ER). VR immerses the user in an environment while AR enhances their environment. Although this technology trend has primarily been used for gaming thus far, it has also been used for training, as with VirtualShip, a simulation software used to train U.S. Navy, Army and Coast Guard ship captains.',
+
+    }
+]
 
 export default function TrendsPage(props: any) {
     const classes = useStyles();
@@ -50,18 +61,24 @@ export default function TrendsPage(props: any) {
         <div className={classes.root}>
             <Layout>
                 <div className={clsx('container max-w-full max-h-screen', classes.root)}>
-                    <div className={classes.Container}>
-                        <div className={classes.sideL}></div>
-                        <div className={classes.centralContent}>
-                            <Typography variant="h3" component="h2">Augument Reality(AR)</Typography>
-                            <Typography variant="h4" component="h5">AR is an interactive experience of a real-world environment
-                                where the objects that reside in the real world are enhanced by computer-generated perceptual
-                                information, sometimes across multiple sensory modalities, including visual, auditory, haptic,
-                                somatosensory and olfactory.</Typography>
-                            <img src='https://mobidev.biz/wp-content/uploads/2020/01/augmented-reality-future-trends-1.png' alt='ILOVE' className={classes.cardImg}/>
-                        </div>
-                        <div className={classes.sideR}></div>
-                    </div>
+
+                    {trends.map( (trend: any, number: number) => {
+                        return (
+                        <Card key={number} className={classes.card}>
+                            <CardContent>
+                                <Typography color="textSecondary" gutterBottom>
+                                    {trend.title}
+                                </Typography>
+                                <Typography variant="body2" component="p">
+                                    {trend.description}
+                                </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Button size="small">Learn More</Button>
+                            </CardActions>
+                        </Card>
+                        )
+                    })}
                 </div>
             </Layout>
         </div>

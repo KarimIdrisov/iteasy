@@ -1,22 +1,37 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
-import Typography  from "@material-ui/core/Typography";
+import Typography from "@material-ui/core/Typography";
 import Layout from "../components/Layout";
 import clsx from "clsx";
+import {Button} from "@material-ui/core";
+import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
     root: {
         backgroundColor: '#85b3dc',
         height: '90.6vh',
     },
-    rightContent: {
-        float: "right",
-        marginTop: "10vh",
-        marginRight: "8vw",
+    firstPage: {
+        textAlign: 'center',
+        paddingTop: "10vh",
+        height: '92vh',
+        backgroundPosition: '50% 0',
+        backgroundImage: 'url(https://wallpaperaccess.com/full/1398314.jpg)',
+        color: '#e2e0e0'
     },
-    leftContent: {
+    secondPage: {
+        textAlign: 'left',
+        paddingTop: "10vh",
+        height: '100vh',
+        paddingRight: '50px',
 
+        backgroundColor: '#d048c3',
+        color: '#eed1d1',
+        backgroundImage: 'url(https://cdn.wallpapersafari.com/17/4/zt6WL8.png)',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover'
     },
+    leftContent: {},
     topText: {
         fontSize: "5rem",
         fontFamily: "Copperplate",
@@ -41,35 +56,10 @@ const useStyles = makeStyles((theme) => ({
         height: 200,
         border: '15px solid #E27D60',
     },
-    irect: {
-        position: "absolute",
-        bottom: 30,
-        left: 30,
-        width: 140,
-        height: 140,
-        border: '15px solid #E8A87C',
-    },
-    iirect: {
-        position: "absolute",
-        bottom: 60,
-        left: 60,
-        width: 80,
-        height: 80,
-        border: '15px solid #C38D9E',
-    },
-    imhex: {
-        position: 'absolute',
-        opacity: 0.25,
-        right: 40,
-        width: '35vw',
-        height: '35vw',
-    },
-    imbox: {
-        position: 'absolute',
-        opacity: 0.25,
-        left: '-12vw',
-        width: '65vw',
-        height: '30vw',
+    link: {
+        marginTop: '10px',
+        color: '#d4d3d3',
+        border: '1px solid gray'
     }
 }));
 
@@ -78,24 +68,29 @@ export default function MainPage(props: any) {
     return (
         <div>
             <Layout>
-                <img src="box.png" alt="hex" className={classes.imbox}/>
                 <div className={clsx('container max-w-full max-h-screen', classes.root)}>
 
-                    <div className={classes.rightContent}>
-                        <img src="2.png" alt="hex" className={classes.imhex}/>
+                    <div className={classes.firstPage}>
                         <Typography className={classes.topText}>Science portal</Typography><br/>
                         <Typography className={classes.midText}>Make technical world <br/>
-                        a little bit closer to you</Typography><br/>
+                            a little bit closer to you</Typography><br/>
                         <Typography className={classes.botText}>Do you want to know what that overcomplicated <br/>
-                        scientifically oriented terms are meaning?<br/>
-                        We will have an answer for you!</Typography>
+                            scientifically oriented terms are meaning?<br/>
+                            We will have an answer for you!</Typography>
+                        <Link to={'/terms/ai'}>
+                            <Button variant='outlined' className={classes.link}>
+                                Learn more
+                            </Button>
+                        </Link>
                     </div>
+
+                    <div className={classes.secondPage}>
+
+                    </div>
+
                     <div className={classes.leftContent}>
-                        Paralax side
+
                     </div>
-                    <div className={classes.rect}></div>
-                    <div className={classes.irect}></div>
-                    <div className={classes.iirect}></div>
                 </div>
             </Layout>
 

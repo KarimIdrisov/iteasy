@@ -5,7 +5,8 @@ const schema = new Schema({
     description: {type: String, required: true},
     relatedWords: {type: String},
     relatedWordsId: {type: String},
-    id: {type: String, required: true, unique: true}
+    id: {type: String, required: true, unique: true},
+    url: {type: String, required: true}
 })
 
 module.exports = model('Term', schema)

@@ -1,12 +1,11 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Layout from "../components/Layout";
-import InfoSlider from "../components/InfoSlider";
 import clsx from "clsx";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        backgroundColor: '#C38D9E'
+        backgroundColor: '#080f19'
     }
 }));
 
@@ -16,7 +15,7 @@ export default function AboutUsPage(props: any) {
         <div>
             <Layout>
                 <div className={clsx('container max-w-full max-h-screen', classes.root)}>
-                    <InfoSlider/>
+
                 </div>
             </Layout>
         </div>

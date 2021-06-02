@@ -19,7 +19,6 @@ router.get('/', async (req, res) => {
 router.get('/getId', async (req, res) => {
     try {
         const terms = await Term.findOne({id: req.query.id})
-        console.log(terms)
         res.json({
             term: terms,
             related: terms.relatedWords.split(','),
