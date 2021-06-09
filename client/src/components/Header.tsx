@@ -61,7 +61,7 @@ const links = [
     {title: 'Home', url: '/'},
     {title: 'News', url: '/news'},
     {title: 'Trends', url: '/trends'},
-    {title: 'Terms', url: '/terms/ai'},
+    {title: 'Terms', url: '/terms'},
     {title: 'About us', url: '/about'},
 ]
 
@@ -107,14 +107,14 @@ export default function Header() {
                     className={clsx([''], {[classes.hide]: width > 1000})} color="inherit" aria-label="menu">
                     <MenuIcon/>
                 </IconButton>
-                <InputBase placeholder="Search"
-                           className={clsx(['bg-white rounded p-1 w-80'], {[classes.hide]: width < 1000})}
-                           inputProps={{'aria-label': 'search'}}
-                           startAdornment={
-                               <InputAdornment position="start">
-                                   <SearchIcon/>
-                               </InputAdornment>
-                           }/>
+                {/*<InputBase placeholder="Search"*/}
+                {/*           className={clsx(['bg-white rounded p-1 w-80'], {[classes.hide]: width < 1000})}*/}
+                {/*           inputProps={{'aria-label': 'search'}}*/}
+                {/*           startAdornment={*/}
+                {/*               <InputAdornment position="start">*/}
+                {/*                   <SearchIcon/>*/}
+                {/*               </InputAdornment>*/}
+                {/*           }/>*/}
                 <div className={clsx(['mr-4 ml-4 container flex text-3xl'], {[classes.hide]: width < 1000})}>
                     {links.map(link => (
                         <Link key={link.title} to={link.url} className={'mx-auto text-2xl font-bold'}>
