@@ -16,6 +16,7 @@ const useStyles = makeStyles(() => ({
         flexDirection: 'row',
         alignItems: "center",
         fontFamily: 'Lato',
+
     },
     innerCont: {
         margin: '1.2rem',
@@ -30,7 +31,6 @@ const useStyles = makeStyles(() => ({
         marginLeft: '1rem',
         width: '20%',
         height: '85%',
-
     },
     linkBox: {
         marginRight: '3vw',
@@ -43,7 +43,7 @@ const useStyles = makeStyles(() => ({
     linkItem: {
         marginRight: '3vw',
         marginLeft: '3vw',
-        fontSize: '2.0rem',
+        fontSize: '2rem',
     },
     hide: {
         display: 'none'
@@ -107,14 +107,6 @@ export default function Header() {
                     className={clsx([''], {[classes.hide]: width > 1000})} color="inherit" aria-label="menu">
                     <MenuIcon/>
                 </IconButton>
-                {/*<InputBase placeholder="Search"*/}
-                {/*           className={clsx(['bg-white rounded p-1 w-80'], {[classes.hide]: width < 1000})}*/}
-                {/*           inputProps={{'aria-label': 'search'}}*/}
-                {/*           startAdornment={*/}
-                {/*               <InputAdornment position="start">*/}
-                {/*                   <SearchIcon/>*/}
-                {/*               </InputAdornment>*/}
-                {/*           }/>*/}
                 <div className={clsx(['mr-4 ml-4 container flex text-3xl'], {[classes.hide]: width < 1000})}>
                     {links.map(link => (
                         <Link key={link.title} to={link.url} className={'mx-auto text-2xl font-bold'}>

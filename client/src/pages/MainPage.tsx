@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
         height: '92vh',
         backgroundPosition: '50% 0',
         backgroundImage: 'url(https://wallpaperaccess.com/full/1398314.jpg)',
+        backgroundSize: 'cover',
         color: '#e2e0e0'
     },
     secondPage: {

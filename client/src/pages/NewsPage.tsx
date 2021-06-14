@@ -19,10 +19,12 @@ import {
 const useStyles = makeStyles((theme) => ({
     root: {
         backgroundColor: '#080f19',
-        height: '100vh',
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
         alignItems: 'center',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        height: '100%'
     },
     media: {
         height: 200,
@@ -38,15 +40,18 @@ const useStyles = makeStyles((theme) => ({
         transform: 'rotate(180deg)',
     },
     card: {
-        width: '60%',
+        width: '26vw',
         marginTop: '2rem',
-        marginBottom: '2rem'
+        marginBottom: '2rem',
+        fontSize: '1.2rem',
+        height: '72vh'
     },
     center: {
         display: "flex",
         justifyContent: "center",
         backgroundColor: '#080f19',
-        width: '100%'
+        width: '28vw',
+        flexWrap: "wrap",
     }
 }));
 
@@ -98,7 +103,7 @@ export default function NewsPage(props: any) {
     return (
         <div>
             <Layout>
-                <div className={clsx('container max-w-full max-h-screen', classes.root)}>
+                <div className={clsx('container max-w-full', classes.root)}>
 
                     {news.map( (news: News, number:number) => {
                         return (
@@ -110,9 +115,9 @@ export default function NewsPage(props: any) {
                                     />
                                     <CardHeader
                                         title={news.title}
-                                        subheader={news.publishedAt}/>
+                                        subheader={news.publishedAt.slice(0, 10)}/>
                                     <CardContent>
-                                        <Typography variant="body2" color="textSecondary" component="p">
+                                        <Typography variant="body1" color="textSecondary" component="p">
                                             {news.content}
                                         </Typography>
                                     </CardContent>
