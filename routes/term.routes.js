@@ -3,10 +3,10 @@ const router = Router()
 const Term = require('../models/Term')
 
 // get all terms
-router.get('/', async (req, res) => {
+router.get('/getTerms', async (req, res) => {
+    console.log(1)
     try {
-        const terms = await Term.find({})
-        console.log(terms)
+        const terms = await Term.find()
         res.json({
             terms: terms
     })

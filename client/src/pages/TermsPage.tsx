@@ -1,12 +1,12 @@
-import React, {MouseEventHandler, useCallback, useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Layout from "../components/Layout";
 import clsx from "clsx";
 import {useHttp} from "../hooks/http.hooks";
 import TermCard from "../components/TermCard";
 import MainTermCard from "../components/MainTermCard";
-import {Link} from "react-router-dom";
 import getTerm from "../utils/getTerm";
+import '../static/style.css'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -36,7 +36,6 @@ export default function TermsPage(props: any) {
     const [current, setCurrent] = useState<Term>()
 
     function changeCurrentLeft() {
-        console.log(getTerm(terms, current?.relatedWordsId.split(',')[0]))
         setCurrent(getTerm(terms, current?.relatedWordsId.split(',')[0]))
     }
 
@@ -44,10 +43,9 @@ export default function TermsPage(props: any) {
         setCurrent(getTerm(terms, current?.relatedWordsId.split(',')[1]))
     }
 
-
     const fetchTerms = useCallback(async () => {
         try {
-            const fetched = await request(`/api/term/`, 'GET', null, {})
+            const fetched = await request(`/api/term/getTerms`, 'GET', null, {})
             setTerms(fetched.terms)
             setCurrent(fetched.terms[0])
         } catch (e) {}
@@ -62,7 +60,6 @@ export default function TermsPage(props: any) {
             <></>
         )
     }
-    console.log(current)
     if (current !== undefined) {
         return (
             <div className={classes.root}>
@@ -91,6 +88,8 @@ export default function TermsPage(props: any) {
             </div>
         );
     } else {
-        return <>Loading</>
+        return (
+            <>Loading</>
+        )
     }
 }

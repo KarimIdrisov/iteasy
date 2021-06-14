@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
     card: {
         margin: '3rem',
         width: '28vw',
-        height: '18vw',
+        height: '20vw',
         background: '#C4C4C4',
         borderRadius: '12%',
         display: 'flex',

@@ -24,13 +24,13 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'left',
         paddingTop: "10vh",
         height: '100vh',
-        paddingRight: '50px',
-
-        backgroundColor: '#d048c3',
-        color: '#eed1d1',
-        backgroundImage: 'url(https://cdn.wallpapersafari.com/17/4/zt6WL8.png)',
+        paddingRight: '32rem',
+        paddingLeft: '20px',
+        backgroundColor: '#242323',
+        color: '#ffffff',
         backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover'
+        backgroundSize: 'cover',
+        position: 'relative',
     },
     leftContent: {},
     topText: {
@@ -61,6 +61,11 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '10px',
         color: '#d4d3d3',
         border: '1px solid gray'
+    },
+    atom: {
+        position: 'absolute',
+        top: '35px',
+        right: 0,
     }
 }));
 
@@ -78,7 +83,7 @@ export default function MainPage(props: any) {
                         <Typography className={classes.botText}>Do you want to know what that overcomplicated <br/>
                             scientifically oriented terms are meaning?<br/>
                             We will have an answer for you!</Typography>
-                        <Link to={'/terms/ai'}>
+                        <Link to={'/terms'}>
                             <Button variant='outlined' className={classes.link}>
                                 Learn more
                             </Button>
@@ -87,6 +92,26 @@ export default function MainPage(props: any) {
 
                     <div className={classes.secondPage}>
 
+                        <div style={{textAlign: 'center', zIndex: 9999}}>
+                            <Typography variant='h3'>IT Trends</Typography><br/>
+                            <Typography variant='h4'>We always keep you informed </Typography><br/>
+                            <Typography variant='h5'>Technology today is evolving at such a rapid pace, enabling faster
+                                change and progress, causing an acceleration of the rate of change, until eventually, it
+                                will become exponential. However, it is not only technology trends and top technologies
+                                that
+                                are evolving, a lot more has changed this year due to the outbreak of COVID-19 making IT
+                                professionals realize that their role will not stay the same in the contactless world
+                                tomorrow. </Typography><br/>
+                            <Typography variant='h4'>Most interesting trends in modern science right here</Typography>
+                            <Link to={'/trends'}>
+                                <Button variant='outlined' className={classes.link}>
+                                    Learn more
+                                </Button>
+                            </Link>
+                        </div>
+
+                        <img src='https://freesvg.org/img/atom-fancy.png' alt='atom'
+                             className={clsx('atom', classes.atom)}/>
                     </div>
 
                     <div className={classes.leftContent}>

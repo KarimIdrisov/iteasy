@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     card: {
         width: '20vw',
-        height: '14vw',
+        height: '16vw',
         background: '#C4C4C4',
         borderRadius: '12%',
         display: 'flex',
@@ -30,6 +30,7 @@ export default function TermCard(props: any) {
 
     return (
         <div className={classes.card}>
+
             <div className={classes.innerCard}>
                 <Typography variant='h5'>{props.header}</Typography>
             </div>

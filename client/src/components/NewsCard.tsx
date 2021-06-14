@@ -4,10 +4,10 @@ import {
     Button,
     Card,
     CardActions,
-    CardContent,
+    CardContent, CardMedia,
     Dialog, DialogActions,
     DialogContent, DialogContentText,
-    DialogTitle,
+    DialogTitle, Divider,
     Typography
 } from "@material-ui/core";
 
@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
     media: {
         height: '5vh',
     },
+    dialog: {}
 }));
 
 export default function NewsCard(props: any) {
@@ -62,12 +63,26 @@ export default function NewsCard(props: any) {
                 onClose={handleClose}
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
+                className={classes.dialog}
+                maxWidth='md'
             >
                 <DialogTitle id="alert-dialog-title">{props.title}</DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
-                        Let Google help apps determine location. This means sending anonymous location data to
-                        Google, even when no apps are running.
+                        {props.text}
+                        <Typography variant='h6'>{props.applicationName}</Typography>
+                        <Typography style={{color: "black"}}>{props.applicationText}</Typography>
+
+                        <Divider/>
+
+                        <CardMedia
+                            component="iframe"
+                            width="280"
+                            height="500"
+                            src={props.video}
+                            title="some video"
+                        />
+
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
