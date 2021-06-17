@@ -28,10 +28,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm-run-all build:tailwind react-scripts build",
+    "build": "npm-run-all react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "build:tailwind": "tailwindcss build src/index.css -o src/tailwind.output.css",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
