@@ -50,6 +50,11 @@ export default function MainTermCard(props: any) {
         setHeight(window.innerHeight);
     };
 
+    React.useEffect(() => {
+        window.addEventListener("resize", updateWidthAndHeight);
+        return () => window.removeEventListener("resize", updateWidthAndHeight);
+    });
+
     if (width < 800) {
         return (
             <div className={classes.minicard}>

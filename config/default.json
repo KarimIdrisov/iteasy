@@ -1,6 +1,0 @@
-{
-  "port": 5000,
-  "mongoUri": "mongodb+srv://admin:englishprojectAdmin@cluster0.kvdw9.mongodb.net/sciencebriefDB?retryWrites=true&w=majority",
-  "jwtSecret": "englishProject",
-  "baseUrl": "http://localhost:5000"
-}
