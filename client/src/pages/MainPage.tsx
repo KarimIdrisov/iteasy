@@ -71,55 +71,66 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MainPage(props: any) {
     const classes = useStyles();
-    return (
-        <div>
-            <Layout>
-                <div className={clsx('container max-w-full max-h-screen', classes.root)}>
 
-                    <div className={classes.firstPage}>
-                        <Typography className={classes.topText}>Science portal</Typography><br/>
-                        <Typography className={classes.midText}>Make technical world <br/>
-                            a little bit closer to you</Typography><br/>
-                        <Typography className={classes.botText}>Do you want to know what that overcomplicated <br/>
-                            scientifically oriented terms are meaning?<br/>
-                            We will have an answer for you!</Typography>
-                        <Link to={'/terms'}>
-                            <Button variant='outlined' className={classes.link}>
-                                Learn more
-                            </Button>
-                        </Link>
-                    </div>
+    const [width, setWidth] = React.useState(window.innerWidth);
+    const [height, setHeight] = React.useState(window.innerHeight);
 
-                    <div className={classes.secondPage}>
+    const updateWidthAndHeight = () => {
+        setWidth(window.innerWidth);
+        setHeight(window.innerHeight);
+    };
 
-                        <div style={{textAlign: 'center', zIndex: 9999}}>
-                            <Typography variant='h3'>IT Trends</Typography><br/>
-                            <Typography variant='h4'>We always keep you informed </Typography><br/>
-                            <Typography variant='h5'>Technology today is evolving at such a rapid pace, enabling faster
-                                change and progress, causing an acceleration of the rate of change, until eventually, it
-                                will become exponential. However, it is not only technology trends and top technologies
-                                that
-                                are evolving, a lot more has changed this year due to the outbreak of COVID-19 making IT
-                                professionals realize that their role will not stay the same in the contactless world
-                                tomorrow. </Typography><br/>
-                            <Typography variant='h4'>Most interesting trends in modern science right here</Typography>
-                            <Link to={'/trends'}>
+    React.useEffect(() => {
+        window.addEventListener("resize", updateWidthAndHeight);
+        return () => window.removeEventListener("resize", updateWidthAndHeight);
+    });
+
+    if (width < 800) {
+        return (
+            <div>
+                <Layout>
+                    <div className={clsx('container max-w-full max-h-screen', classes.root)}>
+
+                        <div className={classes.firstPage}>
+                            <Typography variant='h5'>Science portal</Typography><br/>
+                            <Typography variant='h4'>Make technical world <br/>
+                                a little bit closer to you</Typography><br/>
+                            <Typography className={classes.botText}>Do you want to know what that overcomplicated <br/>
+                                scientifically oriented terms are meaning?<br/>
+                                We will have an answer for you!</Typography>
+                            <Link to={'/terms'}>
                                 <Button variant='outlined' className={classes.link}>
                                     Learn more
                                 </Button>
                             </Link>
                         </div>
-
-                        <img src='https://freesvg.org/img/atom-fancy.png' alt='atom'
-                             className={clsx('atom', classes.atom)}/>
                     </div>
+                </Layout>
+            </div>)
+    } else {
+        return (
+            <div>
+                <Layout>
+                    <div className={clsx('container max-w-full max-h-screen', classes.root)}>
 
-                    <div className={classes.leftContent}>
-
+                        <div className={classes.firstPage}>
+                            <Typography className={classes.topText}>Science portal</Typography><br/>
+                            <Typography className={classes.midText}>Make technical world <br/>
+                                a little bit closer to you</Typography><br/>
+                            <Typography className={classes.botText}>Do you want to know what that
+                                overcomplicated <br/>
+                                scientifically oriented terms are meaning?<br/>
+                                We will have an answer for you!</Typography>
+                            <Link to={'/terms'}>
+                                <Button variant='outlined' className={classes.link}>
+                                    Learn more
+                                </Button>
+                            </Link>
+                        </div>
                     </div>
-                </div>
-            </Layout>
+                </Layout>
 
-        </div>
-    );
+            </div>
+        );
+    }
 }

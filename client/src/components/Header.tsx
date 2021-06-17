@@ -49,7 +49,7 @@ const useStyles = makeStyles(() => ({
         display: 'none'
     },
     mobileMenu: {
-        marginTop: '3.5rem',
+        marginTop: '2.5rem',
         width: '100vh',
     },
     mobileMenuItem: {
@@ -62,7 +62,6 @@ const links = [
     {title: 'News', url: '/news'},
     {title: 'Trends', url: '/trends'},
     {title: 'Terms', url: '/terms'},
-    {title: 'About us', url: '/about'},
 ]
 
 export default function Header() {
@@ -123,9 +122,18 @@ export default function Header() {
                     open={Boolean(anchorEl)}
                     onClose={handleClose}
                     className={classes.mobileMenu}>
-                    <MenuItem onClick={handleClose} className={classes.mobileMenuItem}>IT News</MenuItem>
-                    <MenuItem onClick={handleClose} className={classes.mobileMenuItem}>IT Trends</MenuItem>
-                    <MenuItem onClick={handleClose} className={classes.mobileMenuItem}>IT Terms</MenuItem>
+                    <MenuItem onClick={handleClose} className={classes.mobileMenuItem}>
+                        <Link to={'/'}>Home</Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleClose} className={classes.mobileMenuItem}>
+                        <Link to={'/news'}>News</Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleClose} className={classes.mobileMenuItem}>
+                        <Link to={'/trends'}>Trends</Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleClose} className={classes.mobileMenuItem}>
+                        <Link to={'/terms'}>Terms</Link>
+                    </MenuItem>
                 </Menu>
             </div>
         </div>

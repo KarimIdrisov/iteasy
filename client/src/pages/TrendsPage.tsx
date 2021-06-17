@@ -8,12 +8,19 @@ import NewsCard from "../components/NewsCard";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        backgroundImage: 'url(https://cdn.hipwallpaper.com/i/49/59/CJBg9I.jpg)',
-        height: '100vh',
+        backgroundColor: '#080f19',
         display: 'flex',
         justifyContent: 'center',
-        backgroundSize: "cover",
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        height: '100%'
+    },
+    miniroot: {
+        backgroundColor: '#080f19',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        flexWrap: 'wrap',
+        height: '100%'
     },
     card: {
         width: '28%',
@@ -107,10 +114,25 @@ const trends = [
 export default function TrendsPage(props: any) {
     const classes = useStyles();
 
-    return (
-        <div className={classes.root}>
+    // test
+    const [width, setWidth] = React.useState(window.innerWidth);
+    const [height, setHeight] = React.useState(window.innerHeight);
+
+    const updateWidthAndHeight = () => {
+        setWidth(window.innerWidth);
+        setHeight(window.innerHeight);
+    };
+
+    React.useEffect(() => {
+        window.addEventListener("resize", updateWidthAndHeight);
+        return () => window.removeEventListener("resize", updateWidthAndHeight);
+    });
+
+    if (width < 800) {
+        return (
+        <div className={classes.miniroot}>
             <Layout>
-                <div className={clsx('container max-w-full max-h-screen', classes.root)}>
+                <div className={clsx('container max-w-full', classes.root)}>
 
                     {trends.map((trend: any, number: number) => {
                         return (
@@ -123,5 +145,24 @@ export default function TrendsPage(props: any) {
                 </div>
             </Layout>
         </div>
-    );
+        )
+    } else {
+        return (
+            <div className={classes.root}>
+                <Layout>
+                    <div className={clsx('container max-w-full', classes.root)}>
+
+                        {trends.map((trend: any, number: number) => {
+                            return (
+                                <NewsCard number={number} title={trend.title} description={trend.description}
+                                          text={trend.text} video={trend.video} applicationName={trend.applicationName}
+                                          applicationText={trend.applicationText}
+                                />
+                            )
+                        })}
+                    </div>
+                </Layout>
+            </div>
+        );
+    }
 }
