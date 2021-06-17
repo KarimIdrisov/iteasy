@@ -9,7 +9,7 @@
     "client": "npm run build --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "dev-client": "npm install --prefix client",
-    "build": "npm install & npm dev-client & npm run start & npm run client"
+    "build": "npm install & npm run dev-client & npm run start & npm run client"
   },
   "keywords": [
     "mern",
