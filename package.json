@@ -27,6 +27,7 @@
     "mongoose": "^5.12.6"
   },
   "devDependencies": {
+    "@architect/sandbox": "^3.6.0",
     "concurrently": "^6.0.2",
     "postcss": "^8.2.13"
   }
