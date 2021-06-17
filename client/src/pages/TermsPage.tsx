@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Layout from "../components/Layout";
 import clsx from "clsx";
@@ -9,7 +9,7 @@ import getTerm from "../utils/getTerm";
 import '../static/style.css'
 import {Typography} from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     root: {
         backgroundColor: '#080f19',
         height: '90.6vh',

@@ -1,12 +1,7 @@
 import React from 'react';
 import {makeStyles} from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({
-
-}));
-
 export default function Svg() {
-    const classes = useStyles();
     return (
         <>
             <svg width="155" height="52" viewBox="0 0 155 52" fill="none" xmlns="http://www.w3.org/2000/svg">

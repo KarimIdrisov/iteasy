@@ -1,12 +1,10 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Layout from "../components/Layout";
-import Typography from "@material-ui/core/Typography"
 import clsx from "clsx";
-import {Button, Card, CardActions, CardContent, CardMedia} from "@material-ui/core";
 import NewsCard from "../components/NewsCard";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     root: {
         backgroundColor: '#080f19',
         display: 'flex',

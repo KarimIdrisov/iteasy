@@ -1,10 +1,8 @@
 import React from 'react';
-import InputBase from '@material-ui/core/InputBase'
 import {makeStyles} from '@material-ui/core/styles';
 import Svg from './Svg'
 import {Link} from "react-router-dom";
-import {Button, IconButton, InputAdornment, Menu, MenuItem} from "@material-ui/core";
-import SearchIcon from '@material-ui/icons/Search';
+import {IconButton, Menu, MenuItem} from "@material-ui/core";
 import clsx from "clsx";
 import MenuIcon from '@material-ui/icons/Menu';
 

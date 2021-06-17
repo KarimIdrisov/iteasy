@@ -6,7 +6,7 @@ import clsx from "clsx";
 import {Button} from "@material-ui/core";
 import {Link} from 'react-router-dom'
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     root: {
         backgroundColor: '#85b3dc',
         height: '90.6vh',

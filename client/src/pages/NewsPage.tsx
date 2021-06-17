@@ -5,15 +5,13 @@ import clsx from "clsx";
 import Typography from "@material-ui/core/Typography";
 import axios from "axios";
 import {
-    Avatar,
+
     Button,
     Card,
     CardActions,
     CardContent,
     CardHeader,
     CardMedia,
-    Collapse,
-    IconButton
 } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({

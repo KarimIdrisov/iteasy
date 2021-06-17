@@ -3,7 +3,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import Layout from "../components/Layout";
 import clsx from "clsx";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     root: {
         backgroundColor: '#080f19'
     }

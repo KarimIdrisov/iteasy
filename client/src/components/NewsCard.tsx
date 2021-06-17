@@ -3,7 +3,6 @@ import {makeStyles} from "@material-ui/core/styles";
 import {
     Button,
     Card,
-    CardActions,
     CardContent, CardMedia,
     Dialog, DialogActions,
     DialogContent, DialogContentText,
@@ -11,7 +10,7 @@ import {
     Typography
 } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     card: {
         width: '28%',
         height: '40vh',
