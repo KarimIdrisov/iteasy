@@ -28,7 +28,9 @@ export default function Header(props: any) {
                 <div className="header__row">
 
                     <div className="header__logo">
-                        <Svg />
+                        <Link to='/'>
+                            <Svg />
+                        </Link>
                     </div>
 
                     <div className="header__burger" onClick={openMenu} >
