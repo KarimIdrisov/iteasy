@@ -326,3 +326,10 @@ h6 {
 
    background-color: #e4eceb;
 }
+
+/* News page styles */
+
+.main.news {
+   background: none;
+   background-color: #080f19;
+}
